@@ -71,3 +71,8 @@ matplotlib.rcParams["axes.unicode_minus"]=False #폰트 깨짐 대처
 plt.rc('font', family='Malgun Gothic')
 x=len(year_list)
 plt.bar(range(x), total_emission_list)
+plt.xticks(range(x),year_list)
+plt.title('년도별 온실가스 총배출량')
+plt.xlabel('년도')
+plt.ylabel('총배출량')
+plt.show()
