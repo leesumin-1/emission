@@ -26,3 +26,24 @@ for year_table_tbody_tr in year_table_tbody_tr_list :
         print("\t", year_table_tbody_tr_td.text ,end="")
     print("")
 time.sleep(3)
+
+# 온실가스 배출량 출력
+driver.get(url=URL)
+emission_table=driver.find_elements_by_class_name("table_style_2")
+# print(len(weather_table))
+
+emission_table_tbody=emission_table[0].find_elements_by_tag_name("tbody")
+# print(len(weather_table_tbody))
+
+emission_table_tbody_tr_list=emission_table_tbody[0].find_elements_by_tag_name("tr")
+# print(len(weather_table_tbody_tr_list))
+
+emission_list = []
+for emission_table_tbody_tr in emission_table_tbody_tr_list :
+    emission_table_tbody_tr_td_list=emission_table_tbody_tr.find_elements_by_tag_name("td")
+    for emission_table_tbody_tr_td in emission_table_tbody_tr_td_list :
+        print("\t", emission_table_tbody_tr_td.text, end="")
+    print("")
+time.sleep(3)
+
+driver.close()
